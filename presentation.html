@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis of Phishing & Spam Emails</title>
+
+    <!-- Using Tailwind CSS for styling as in the React component -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f3f4f6; /* bg-gray-100 */
+        }
+        .slide {
+            display: none;
+            height: 100%;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        .slide.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="flex flex-col h-screen">
+
+    <!-- Main Content Area -->
+    <div class="flex-1 bg-white shadow-lg m-4 rounded-lg overflow-hidden relative">
+
+        <!-- Slide 1: Title -->
+        <div class="slide active h-full" id="slide-0">
+            <div class="flex flex-col items-center justify-center h-full">
+                <h1 class="text-6xl font-bold text-blue-900 mb-6 text-center">Analysis of Phishing & Spam Emails</h1>
+                <h2 class="text-3xl text-gray-700 mb-12 text-center">Phishing Detection System Development</h2>
+                <div class="text-xl text-gray-600 text-center">
+                    <p>Khoi Duong</p>
+                    <p>Prof. Marepalli</p>
+                    <p>CS570 - December 12, 2025</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Problem Statement -->
+        <div class="slide h-full" id="slide-1">
+            <div class="p-8 h-full flex flex-col justify-center">
+                <h2 class="text-4xl font-bold text-blue-900 mb-8">The Challenge</h2>
+                <div class="grid grid-cols-2 gap-8">
+                    <div class="bg-red-50 p-6 rounded-lg border-l-4 border-red-500">
+                        <h3 class="text-2xl font-semibold text-red-800 mb-4">Modern Threats</h3>
+                        <ul class="space-y-3 text-lg">
+                            <li>• Polymorphic text variations</li>
+                            <li>• "Snowshoe" spamming techniques</li>
+                            <li>• Compromised legitimate infrastructure</li>
+                            <li>• Psychological manipulation</li>
+                        </ul>
+                    </div>
+                    <div class="bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
+                        <h3 class="text-2xl font-semibold text-green-800 mb-4">Our Solution</h3>
+                        <ul class="space-y-3 text-lg">
+                            <li>• Multi-dimensional analysis</li>
+                            <li>• Linguistic forensics</li>
+                            <li>• Temporal dynamics</li>
+                            <li>• Graph topology</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-8 p-6 bg-blue-50 rounded-lg">
+                    <p class="text-xl text-center font-semibold text-blue-900">
+                        Traditional signature-based detection is no longer sufficient
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Methodology -->
+        <div class="slide h-full" id="slide-2">
+            <div class="p-8 h-full flex flex-col justify-center">
+                <h2 class="text-4xl font-bold text-blue-900 mb-8">Three-Pillar Forensic Framework</h2>
+                <div class="grid grid-cols-3 gap-6">
+                    <div class="bg-purple-50 p-6 rounded-lg text-center">
+                        <div class="text-5xl mb-4">📝</div>
+                        <h3 class="text-2xl font-bold text-purple-800 mb-4">Linguistic Forensics</h3>
+                        <p class="text-lg">Semantic content analysis using Word2Vec and TF-IDF</p>
+                    </div>
+                    <div class="bg-orange-50 p-6 rounded-lg text-center">
+                        <div class="text-5xl mb-4">⏰</div>
+                        <h3 class="text-2xl font-bold text-orange-800 mb-4">Temporal Dynamics</h3>
+                        <p class="text-lg">Timestamp analysis to identify behavioral patterns</p>
+                    </div>
+                    <div class="bg-teal-50 p-6 rounded-lg text-center">
+                        <div class="text-5xl mb-4">🕸️</div>
+                        <h3 class="text-2xl font-bold text-teal-800 mb-4">Graph Topology</h3>
+                        <p class="text-lg">Network analysis using Neo4j to map relationships</p>
+                    </div>
+                </div>
+                <div class="mt-8 bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-2xl font-semibold mb-4">Evaluated Models</h3>
+                    <div class="flex justify-around text-center flex-wrap">
+                        <div class="text-lg m-2">Logistic Regression</div>
+                        <div class="text-lg m-2">Random Forest</div>
+                        <div class="text-lg m-2">Naive Bayes</div>
+                        <div class="text-lg m-2">Neural Network</div>
+                        <div class="text-lg m-2">Decision Tree</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Dataset Overview -->
+        <div class="slide h-full" id="slide-3">
+            <div class="p-8 h-full flex flex-col justify-center">
+                <h2 class="text-4xl font-bold text-blue-900 mb-6">Dataset Characteristics</h2>
+                <div class="grid grid-cols-2 gap-8 mb-6">
+                    <div class="bg-green-50 p-6 rounded-lg">
+                        <h3 class="text-2xl font-bold text-green-800 mb-4">Ham Emails (52%)</h3>
+                        <ul class="space-y-2 text-lg">
+                            <li>• 42,891 benign emails</li>
+                            <li>• Normal body length distribution</li>
+                            <li>• Business hours activity</li>
+                            <li>• Conversational language</li>
+                        </ul>
+                    </div>
+                    <div class="bg-red-50 p-6 rounded-lg">
+                        <h3 class="text-2xl font-bold text-red-800 mb-4">Spam Emails (48%)</h3>
+                        <ul class="space-y-2 text-lg">
+                            <li>• 39,595 malicious emails</li>
+                            <li>• Extreme body lengths (very short/long)</li>
+                            <li>• Off-hours automated activity</li>
+                            <li>• Urgency-focused terms</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-blue-900 mb-3">Key Sources</h3>
+                    <div class="grid grid-cols-3 gap-4 text-center">
+                        <div class="bg-white p-3 rounded shadow-sm">Enron Corpus</div>
+                        <div class="bg-white p-3 rounded shadow-sm">CEAS_08</div>
+                        <div class="bg-white p-3 rounded shadow-sm">Nigerian Fraud</div>
+                        <div class="bg-white p-3 rounded shadow-sm">Ling Dataset</div>
+                        <div class="bg-white p-3 rounded shadow-sm">SpamAssassin</div>
+                        <div class="bg-white p-3 rounded shadow-sm">Nazario</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Linguistic Analysis -->
+        <div class="slide h-full" id="slide-4">
+            <div class="p-8 h-full flex flex-col justify-center">
+                <h2 class="text-4xl font-bold text-blue-900 mb-6">Semantic Analysis Results</h2>
+                <div class="grid grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-purple-800 mb-4">Key Findings</h3>
+                        <div class="bg-yellow-50 p-4 rounded-lg mb-4 border-l-4 border-yellow-500">
+                            <h4 class="font-bold text-lg mb-2">Financial Fraud Cluster</h4>
+                            <p class="text-base">Words: bank, million, account, company grouped tightly</p>
+                        </div>
+                        <div class="bg-red-50 p-4 rounded-lg mb-4 border-l-4 border-red-500">
+                            <h4 class="font-bold text-lg mb-2">Call to Action Cluster</h4>
+                            <p class="text-base">Terms: unsubscribe, click, free at top region</p>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                            <h4 class="font-bold text-lg mb-2">Sentiment Analysis</h4>
+                            <p class="text-base">Phishing emails show polarized sentiment scores (-1.0 to +1.0)</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-100 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-4 text-center">Capitalization Patterns</h3>
+                        <div class="space-y-4">
+                            <div class="bg-white p-4 rounded shadow-sm">
+                                <p class="text-lg mb-2"><strong>High Ratio (~1.0):</strong></p>
+                                <p class="text-red-600 font-bold">Phishing Indicator</p>
+                            </div>
+                            <div class="bg-white p-4 rounded shadow-sm">
+                                <p class="text-lg mb-2"><strong>Extreme Sentiment:</strong></p>
+                                <p class="text-red-600 font-bold">Manipulation Tactic</p>
+                            </div>
+                            <div class="bg-white p-4 rounded shadow-sm">
+                                <p class="text-lg mb-2"><strong>Normal Patterns:</strong></p>
+                                <p class="text-green-600 font-bold">Benign Communication</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Temporal Dynamics -->
+        <div class="slide h-full" id="slide-5">
+            <div class="p-8 h-full flex flex-col justify-center">
+                <h2 class="text-4xl font-bold text-blue-900 mb-6">Time-Based Behavioral Patterns</h2>
+                <div class="grid grid-cols-2 gap-8 mb-6">
+                    <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+                        <h3 class="text-2xl font-bold text-blue-800 mb-4">Benign Traffic</h3>
+                        <ul class="space-y-3 text-lg">
+                            <li>✓ Peak hours: 9 AM - 5 PM</li>
+                            <li>✓ Follows circadian rhythms</li>
+                            <li>✓ Low activity at night</li>
+                            <li>✓ Human communication patterns</li>
+                        </ul>
+                    </div>
+                    <div class="bg-red-50 p-6 rounded-lg border-l-4 border-red-500">
+                        <h3 class="text-2xl font-bold text-red-800 mb-4">Malicious Traffic</h3>
+                        <ul class="space-y-3 text-lg">
+                            <li>⚠ Flat distribution across hours</li>
+                            <li>⚠ Off-hours activity spikes</li>
+                            <li>⚠ Automated patterns</li>
+                            <li>⚠ Botnet characteristics</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-purple-50 p-6 rounded-lg">
+                    <h3 class="text-2xl font-semibold text-purple-900 mb-3 text-center">Key Insight</h3>
+                    <p class="text-xl text-center">
+                        Temporal analysis reveals automated botnet behavior through time-shifted and continuous activity patterns that diverge from organic human communication
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Graph Topology -->
+        <div class="slide h-full" id="slide-6">
+            <div class="p-8 h-full flex flex-col justify-center">
+                <h2 class="text-4xl font-bold text-blue-900 mb-6">Network Pattern Detection with Neo4j</h2>
+                <div class="grid grid-cols-3 gap-4 mb-6">
+                    <div class="bg-yellow-50 p-4 rounded-lg text-center">
+                        <h4 class="text-xl font-bold text-yellow-800 mb-2">Campaign Blast</h4>
+                        <p class="text-sm mb-2">Same subject → 10+ receivers</p>
+                        <div class="text-3xl mb-2">📧➡️👥</div>
+                    </div>
+                    <div class="bg-orange-50 p-4 rounded-lg text-center">
+                        <h4 class="text-xl font-bold text-orange-800 mb-2">Mule Chain</h4>
+                        <p class="text-sm mb-2">A→B→C relay pattern</p>
+                        <div class="text-3xl mb-2">🔄➡️🔄</div>
+                    </div>
+                    <div class="bg-red-50 p-4 rounded-lg text-center">
+                        <h4 class="text-xl font-bold text-red-800 mb-2">Shared Infrastructure</h4>
+                        <p class="text-sm mb-2">Multiple senders → Same URL</p>
+                        <div class="text-3xl mb-2">👥➡️🔗</div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-2xl font-semibold mb-4">Critical Findings</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white p-4 rounded border-l-4 border-red-500">
+                            <p class="font-bold text-red-800 mb-2">Roger Upole (msn.com)</p>
+                            <p class="text-sm">Confirmed hostile actor - Mule & distributor</p>
+                        </div>
+                        <div class="bg-white p-4 rounded border-l-4 border-red-500">
+                            <p class="font-bold text-red-800 mb-2">Claretta Borders</p>
+                            <p class="text-sm">Common denominator linking multiple senders</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 p-4 bg-blue-100 rounded-lg text-center">
+                    <p class="text-lg font-semibold text-blue-900">
+                        Result: Identified coordinated botnet with distributed zombie accounts
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Model Performance -->
+        <div class="slide h-full" id="slide-7">
+            <div class="p-8 h-full flex flex-col justify-center">
+                <h2 class="text-4xl font-bold text-blue-900 mb-6">Comparative Model Analysis</h2>
+                <div class="grid grid-cols-5 gap-3 mb-6">
+                    <div class="bg-green-50 p-4 rounded-lg text-center border-2 border-green-500">
+                        <h4 class="font-bold text-green-800 mb-2">Neural Network</h4>
+                        <p class="text-3xl font-bold text-green-600">98.33%</p>
+                        <p class="text-sm text-gray-600">Accuracy</p>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-lg text-center border-2 border-green-400">
+                        <h4 class="font-bold text-green-800 mb-2">Logistic Reg</h4>
+                        <p class="text-3xl font-bold text-green-600">98.01%</p>
+                        <p class="text-sm text-gray-600">Accuracy</p>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg text-center">
+                        <h4 class="font-bold text-blue-800 mb-2">Random Forest</h4>
+                        <p class="text-3xl font-bold text-blue-600">97.89%</p>
+                        <p class="text-sm text-gray-600">Accuracy</p>
+                    </div>
+                    <div class="bg-yellow-50 p-4 rounded-lg text-center">
+                        <h4 class="font-bold text-yellow-800 mb-2">Naive Bayes</h4>
+                        <p class="text-3xl font-bold text-yellow-600">95.80%</p>
+                        <p class="text-sm text-gray-600">Accuracy</p>
+                    </div>
+                    <div class="bg-orange-50 p-4 rounded-lg text-center">
+                        <h4 class="font-bold text-orange-800 mb-2">Decision Tree</h4>
+                        <p class="text-3xl font-bold text-orange-600">94.90%</p>
+                        <p class="text-sm text-gray-600">Accuracy</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="bg-blue-50 p-5 rounded-lg">
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Strengths</h3>
+                        <ul class="space-y-2">
+                            <li>✓ Neural Network: Best pattern recognition</li>
+                            <li>✓ Logistic Regression: Excellent AUC (0.9976)</li>
+                            <li>✓ Random Forest: Robust to overfitting</li>
+                        </ul>
+                    </div>
+                    <div class="bg-red-50 p-5 rounded-lg">
+                        <h3 class="text-xl font-bold text-red-900 mb-3">Limitations</h3>
+                        <ul class="space-y-2">
+                            <li>⚠ Decision Tree: Overfitting issues</li>
+                            <li>⚠ Naive Bayes: Independence assumption</li>
+                            <li>⚠ Single models hit performance ceiling</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Advanced Strategies -->
+        <div class="slide h-full" id="slide-8">
+            <div class="p-8 h-full flex flex-col justify-center">
+                <h2 class="text-4xl font-bold text-blue-900 mb-6">Breaking the Performance Ceiling</h2>
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="space-y-4">
+                        <div class="bg-purple-50 p-5 rounded-lg border-l-4 border-purple-500">
+                            <h3 class="text-xl font-bold text-purple-800 mb-2">1. Ensemble (LR + NN)</h3>
+                            <p class="text-sm mb-2">Soft voting averages probabilities</p>
+                            <p class="font-semibold text-purple-900">Accuracy: 95.18% | FPR: 0.0041</p>
+                        </div>
+                        <div class="bg-blue-50 p-5 rounded-lg border-l-4 border-blue-500">
+                            <h3 class="text-xl font-bold text-blue-800 mb-2">2. Hybrid Forensic Model</h3>
+                            <p class="text-sm mb-2">Injects expert features (cap ratio, URLs, risk words)</p>
+                            <p class="font-semibold text-blue-900">Enhanced domain knowledge</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-teal-50 p-5 rounded-lg border-l-4 border-teal-500">
+                            <h3 class="text-xl font-bold text-teal-800 mb-2">3. Enhanced Ensemble</h3>
+                            <p class="text-sm mb-2">Adds Gradient Boosting to correct bias</p>
+                            <p class="font-semibold text-teal-900">Most robust classifier</p>
+                        </div>
+                        <div class="bg-green-50 p-5 rounded-lg border-l-4 border-green-500">
+                            <h3 class="text-xl font-bold text-green-800 mb-2">4. LSTM Deep Learning</h3>
+                            <p class="text-sm mb-2">Sequential processing with context understanding</p>
+                            <p class="font-semibold text-green-900">Accuracy: 97.48% | Superior detection</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 bg-yellow-50 p-5 rounded-lg text-center border-2 border-yellow-500">
+                    <p class="text-xl font-bold text-yellow-900">
+                        Trade-off: Enhanced Ensemble = "Safe" | LSTM = "Strong"
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Conclusions -->
+        <div class="slide h-full" id="slide-9">
+            <div class="p-8 h-full flex flex-col justify-center">
+                <h2 class="text-4xl font-bold text-blue-900 mb-6">Key Takeaways</h2>
+                <div class="grid grid-cols-2 gap-8 mb-6">
+                    <div class="bg-green-50 p-6 rounded-lg">
+                        <h3 class="text-2xl font-bold text-green-800 mb-4">✓ Achievements</h3>
+                        <ul class="space-y-3 text-base">
+                            <li>• Multi-dimensional framework proven effective</li>
+                            <li>• Graph topology identified coordinated botnets</li>
+                            <li>• Ensemble models outperform single classifiers</li>
+                            <li>• LSTM provides superior contextual understanding</li>
+                            <li>• Low false positive rate achieved (0.41%)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-blue-50 p-6 rounded-lg">
+                        <h3 class="text-2xl font-bold text-blue-800 mb-4">→ Recommendations</h3>
+                        <ul class="space-y-3 text-base">
+                            <li>• Deploy Enhanced Ensemble for business email</li>
+                            <li>• Use LSTM for high-security environments</li>
+                            <li>• Integrate temporal + graph analysis</li>
+                            <li>• Regular model retraining on new campaigns</li>
+                            <li>• Real-time Neo4j monitoring for infrastructure</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-purple-100 p-6 rounded-lg border-2 border-purple-500">
+                    <h3 class="text-2xl font-bold text-purple-900 mb-3 text-center">The Future of Phishing Defense</h3>
+                    <p class="text-xl text-center text-gray-800">
+                        Transition from keyword matching → behavioral and contextual analysis represents the evolution of effective cyber defense
+                    </p>
+                </div>
+                <div class="mt-6 text-center">
+                    <p class="text-3xl font-bold text-blue-900">Questions?</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Navigation Bar -->
+    <div class="bg-gray-800 text-white p-4 flex items-center justify-between shadow-inner">
+        <button id="prevBtn" class="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed">
+            <i class="fas fa-chevron-left"></i>
+            Previous
+        </button>
+
+        <div class="text-center">
+            <p class="text-sm text-gray-300">Slide <span id="currentSlideNum">1</span> of <span id="totalSlidesNum">10</span></p>
+            <p class="font-semibold" id="currentTitle">Analysis of Phishing & Spam Emails</p>
+        </div>
+
+        <button id="nextBtn" class="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed">
+            Next
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+
+    <script>
+        // Data for Titles to update the footer dynamically
+        const slideTitles = [
+            "Analysis of Phishing & Spam Emails",
+            "The Evolving Threat Landscape",
+            "Research Methodology",
+            "Dataset Overview",
+            "Linguistic Forensics",
+            "Temporal Dynamics",
+            "Graph Topology Analysis",
+            "Baseline Model Performance",
+            "Advanced Ensemble Strategies",
+            "Conclusions & Future Work"
+        ];
+
+        let currentSlide = 0;
+        const totalSlides = 10;
+        const slides = document.querySelectorAll('.slide');
+
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const currentSlideNum = document.getElementById('currentSlideNum');
+        const totalSlidesNum = document.getElementById('totalSlidesNum');
+        const currentTitle = document.getElementById('currentTitle');
+
+        function updateSlide() {
+            // Hide all slides
+            slides.forEach(slide => slide.classList.remove('active'));
+
+            // Show current slide
+            const activeSlide = document.getElementById(`slide-${currentSlide}`);
+            if (activeSlide) {
+                activeSlide.classList.add('active');
+            }
+
+            // Update Text
+            currentSlideNum.textContent = currentSlide + 1;
+            currentTitle.textContent = slideTitles[currentSlide];
+
+            // Button States
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === totalSlides - 1;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlide();
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+                updateSlide();
+            }
+        });
+
+        // Keyboard Navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === 'Space') {
+                if (currentSlide < totalSlides - 1) {
+                    currentSlide++;
+                    updateSlide();
+                }
+            } else if (e.key === 'ArrowLeft') {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                    updateSlide();
+                }
+            }
+        });
+
+        // Initialize
+        updateSlide();
+    </script>
+</body>
+</html>
